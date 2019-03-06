@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs/Observable/interval';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
+
+
 
 @Component({
   selector: 'app-exemplos-pipes',
@@ -17,9 +22,18 @@ export class ExemplosPipesComponent implements OnInit {
 
   };
 
+  livros: string[] = ['Java', 'Angular 2', 'C#'];
+  filtro: string;
+
+  valorAsync = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Valor Asincrono'), 2000)
+  });
+  
+  
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
