@@ -4,9 +4,35 @@
 <p> Estrelas: {{ livro.rating | number:'1.1-3' }} </p>
 <p> Páginas: {{ livro.numeropaginas | number }} </p>
 <p> preço: {{ livro.preco | currency:'BRL' }} </p>
-<p> Data Lançamento: {{ livro.dataLancamento | date:'dd-MM-yyyy'}} </p>
+<p> Data Lançamento: {{ livro.dataLancamento | date:'medium' }} </p>
 <p> Url: {{ livro.url}} </p>
 
 <br>
 
 <p> Livro: {{ livro | json}} </p>
+
+
+<input type="text" [(ngModel)]="filtro">
+
+<!-- <h1>Pipe puro</h1>
+<ol>
+    <li *ngFor="let item of livros | filtroArrayPipe: 'filtro'">
+       {{ item }} 
+    </li>
+</ol>
+
+<h1>Pipe impuro</h1>
+<ol>
+    <li *ngFor="let item of livros | filtroArrayImpuro: 'filtro'">
+       {{ item }} 
+    </li>
+</ol>
+
+<h1>Maneira correta</h1>
+<ol>
+    <li *ngFor="let item of livros | filtroArrayImpuro: 'filtro'">
+       {{ item }} 
+    </li>
+</ol> -->
+
+<p>{{ valorAsync | async }}</p>
