@@ -1,0 +1,68 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
+
+  <div class="form-row" [class.has-error]="!nome.valid && nome.touched"
+    [class.has-feedback]="!nome.valid && nome.touched">
+    <div class="form-group col-md-12">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome" [(ngModel)]="usuario.nome"
+        required #nome="ngModel">
+      <div class="alert alert-danger" role="alert" *ngIf="!nome.valid && nome.touched" role="alert">
+        This is a danger alert—check it out!
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+      placeholder="Enter email" [(ngModel)]="usuario.email" required>
+  </div>
+
+
+  <div class="form-row" ngModelGroup="endereco">
+
+    <div class="form-group col-md-4">
+      <label for="cep" class="control-label">CEP</label>
+      <input type="text" class="form-control" id="cep" name="cep" 
+      ngModel required #cep="ngModel" (blur)="consultaCep($event.target.value, f)">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="numero">Número</label>
+      <input type="text" class="form-control" id="numero" name="numero" ngModel required #numero="ngModel">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="complemento">Complemento</label>
+      <input type="text" class="form-control" id="complemento" name="complemento" ngModel
+        #complemento="ngModel">
+    </div>
+
+    <div class="form-group col-md-12">
+      <label for="rua">Rua</label>
+      <input type="text" class="form-control" id="rua" name="rua" readonly ngModel #rua="ngModel">
+    </div>
+
+    <div class="form-group col-md-5">
+      <label for="bairro">Bairro</label>
+      <input type="text" class="form-control" id="bairro" name="bairro" readonly ngModel  #bairro="ngModel">
+    </div>
+
+    <div class="form-group col-md-5">
+      <label for="cidade">Cidade</label>
+      <input type="text" class="form-control" id="cidade" name="cidade" readonly ngModel  #cidade="ngModel">
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="estado">Estado</label>
+      <input type="text" class="form-control" id="estado" name="estado" readonly ngModel  #estado="ngModel">
+    </div>
+
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+
+  <app-form-debug [form]="f"></app-form-debug>
+
+</form>
