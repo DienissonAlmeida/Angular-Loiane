@@ -1,0 +1,42 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of lista" >
+              <div class="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <label for="checkbox">
+                  List group {{item.nome}} heading
+                </label>
+              </div>
+              <div class="pull-right action-buttons">
+                <a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="http://www.jquery2dotnet.com" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="http://www.jquery2dotnet.com" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+              </div>
+            </li>           
+          </ul>
+        </div>
+        <div class="col-md-6" style="float:right">
+          <ul class="pagination pagination-sm pull-right">
+            <li class="disabled"><a href="javascript:void(0)">«</a></li>
+            <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+            <li><a href="http://www.jquery2dotnet.com">2</a></li>
+            <li><a href="http://www.jquery2dotnet.com">3</a></li>
+            <li><a href="http://www.jquery2dotnet.com">4</a></li>
+            <li><a href="http://www.jquery2dotnet.com">5</a></li>
+            <li><a href="javascript:void(0)">»</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
