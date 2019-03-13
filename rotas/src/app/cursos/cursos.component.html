@@ -1,0 +1,10 @@
+<div class="container">
+  <p>Página: {{ pagina }}</p>
+<div class="collection">
+    <a class="collection-item"
+    *ngFor="let curso of cursos"
+    [routerLink]="[ '/curso', curso.id ]"
+    >{{curso.nome}}</a>
+  </div>
+  <button class="btn waves-effect waves-light" (click)="NextPage()">Next</button>
+</div>
